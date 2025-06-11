@@ -13,7 +13,7 @@ jobs:
       - name: Set image tag
         run: echo "IMAGE_TAG=$(date +%s)" >> $GITHUB_ENV
       - name: build Image
-        run: docker build ../ -t victorarjona10/backend:${{ env.IMAGE_TAG }}
+        run: docker build . -t victorarjona10/backend:${{ env.IMAGE_TAG }}
       - name: push image to docker hub
         run: 
           echo "${{ secrets.DOCKER_HUB_TOKEN_VICTORARJONA }}" | docker login -u "victorarjona10" --password-stdin

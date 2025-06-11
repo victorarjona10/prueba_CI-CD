@@ -27,7 +27,7 @@ COPY --from=build /home/app/package*.json ./
 COPY --from=build /home/app/dist ./dist
 
 # Copiar el archivo .env al contenedor
-COPY .env .env
+#COPY .env .env
 
 # Instalar solo las dependencias de producción BUENO Y LAS DE DESARROLLO TAMBIEN POR SI ACASO
 RUN npm install 
